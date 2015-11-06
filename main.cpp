@@ -47,31 +47,31 @@ int main(int argc, char** argv) {
                 }
                 break;
             case 2: //Campos
-                opcion = menuCampos();
-                while (opcion < 1 || opcion > 5) {
-                    opcion = menuCampos();
+                int opcionCampos = menuCampos();
+                while (opcionCampos < 1 || opcionCampos > 5) {
+                    opcionCampos = menuCampos();
                 }
                 break;
 
             case 3: //Registros
-                opcion = menuRegistros();
-                while (opcion < 1 || opcion > 6) {
-                    opcion = menuRegistros();
+                int opcionRegistros = menuRegistros();
+                while (opcionRegistros < 1 || opcionRegistros > 6) {
+                    opcionRegistros = menuRegistros();
                 }
                 break;
 
             case 4: //Indices
-                opcion = menuIndices();
-                while (opcion < 1 || opcion > 3) {
-                    opcion = menuIndices();
+                int opcionIndices = menuIndices();
+                while (opcionIndices < 1 || opcionIndices > 3) {
+                    opcionIndices = menuIndices();
                 }
 
                 break;
 
             case 5: //Estandarizacion
-                opcion = menuEstandarizacion();
-                while (opcion < 1 || opcion > 4) {
-                    opcion = menuEstandarizacion();
+                int opcionEstandarizacion = menuEstandarizacion();
+                while (opcionEstandarizacion < 1 || opcionEstandarizacion > 4) {
+                    opcionEstandarizacion = menuEstandarizacion();
                 }
 
                 break;
