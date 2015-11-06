@@ -22,40 +22,61 @@ int menuEstandarizacion();
 
 int main(int argc, char** argv) {
     int opcion = 0;
-    opcion = menuPrincipal();
-    while (opcion < 1 || opcion > 5) {
+    do {
         opcion = menuPrincipal();
-    }
-    if (opcion == 1) {
-        opcion = menuArchivo();
         while (opcion < 1 || opcion > 5) {
-            opcion = menuArchivo();
+            opcion = menuPrincipal();
         }
-    }
-    if (opcion == 2) {
-        opcion = menuCampos();
-        while(opcion < 1 || opcion > 5){
-            opcion = menuCampos();
+
+        switch (opcion) {
+            case 1: //Archivos
+                int opcionArchivo = menuArchivo();
+                while (opcionArchivo < 1 || opcionArchivo > 5) {
+                    opcionArchivo = menuArchivo();
+                }
+                if (opcionArchivo == 1) {
+
+                } else if (opcionArchivo == 2) {
+
+                } else if (opcionArchivo == 3) {
+
+                } else if (opcionArchivo == 4) {
+                    opcion = 6;
+                } else if (opcionArchivo == 5) {
+                    
+                }
+                break;
+            case 2: //Campos
+                opcion = menuCampos();
+                while (opcion < 1 || opcion > 5) {
+                    opcion = menuCampos();
+                }
+                break;
+
+            case 3: //Registros
+                opcion = menuRegistros();
+                while (opcion < 1 || opcion > 6) {
+                    opcion = menuRegistros();
+                }
+                break;
+
+            case 4: //Indices
+                opcion = menuIndices();
+                while (opcion < 1 || opcion > 3) {
+                    opcion = menuIndices();
+                }
+
+                break;
+
+            case 5: //Estandarizacion
+                opcion = menuEstandarizacion();
+                while (opcion < 1 || opcion > 4) {
+                    opcion = menuEstandarizacion();
+                }
+
+                break;
         }
-    }
-    if (opcion == 3) {
-        opcion = menuRegistros();
-        while(opcion < 1 || opcion > 6){
-            opcion = menuRegistros();
-        }
-    }
-    if (opcion == 4) {
-        opcion = menuIndices();
-        while(opcion < 1 || opcion > 3){
-            opcion = menuIndices();
-        }
-    }
-    if (opcion == 5) {
-        opcion = menuEstandarizacion();
-        while(opcion < 1 || opcion > 4){
-            opcion = menuEstandarizacion();
-        }
-    }
+    } while (opcion != 6);
     return 0;
 }
 
